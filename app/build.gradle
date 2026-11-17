@@ -31,8 +31,8 @@ android {
 
         targetSdkVersion 28
 
-        versionCode 21
-        versionName "WinLab-1.1"
+        versionCode 22
+        versionName "WinLab-1.2"
 
         // External native build from Winlator
         externalNativeBuild {

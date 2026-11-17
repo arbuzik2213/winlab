@@ -1,0 +1,90 @@
+[
+  {
+    "id": "gta-sa",
+    "names": ["gta_sa.exe", "gta-sa.exe", "gta_sa_compact.exe"],
+    "extras": {
+      "screenSize": "1280x720",
+      "box64Preset": "PERFORMANCE",
+      "dxwrapper": "dxvk",
+      "dxwrapperConfig": "version=1.10.3,framerate=60,maxDeviceMemory=0,async=1,asyncCache=1,vkd3dVersion=2.14.1-0,vkd3dLevel=12_1",
+      "forceFullscreen": "1"
+    }
+  },
+  {
+    "id": "gta-iv",
+    "names": ["gtaiv.exe", "launchgtaiv.exe"],
+    "extras": {
+      "screenSize": "1280x720",
+      "box64Preset": "PERFORMANCE",
+      "dxwrapperConfig": "version=1.10.3,framerate=30,maxDeviceMemory=0,async=1,asyncCache=1,vkd3dVersion=2.14.1-0,vkd3dLevel=12_1",
+      "forceFullscreen": "1"
+    }
+  },
+  {
+    "id": "skyrim",
+    "names": ["tesv.exe", "skyrimse.exe"],
+    "extras": {
+      "screenSize": "1280x720",
+      "box64Preset": "PERFORMANCE",
+      "dxwrapperConfig": "version=2.4.1-gplasync,framerate=60,maxDeviceMemory=0,async=1,asyncCache=1,vkd3dVersion=2.14.1-0,vkd3dLevel=12_1",
+      "forceFullscreen": "1"
+    }
+  },
+  {
+    "id": "fallout",
+    "names": ["fallout3.exe", "falloutnv.exe", "fallout4.exe"],
+    "extras": {
+      "screenSize": "1280x720",
+      "box64Preset": "PERFORMANCE",
+      "dxwrapperConfig": "version=2.4.1-gplasync,framerate=30,maxDeviceMemory=0,async=1,asyncCache=1,vkd3dVersion=2.14.1-0,vkd3dLevel=12_1",
+      "forceFullscreen": "1"
+    }
+  },
+  {
+    "id": "witcher3",
+    "names": ["witcher3.exe"],
+    "extras": {
+      "screenSize": "960x540",
+      "box64Preset": "PERFORMANCE",
+      "dxwrapperConfig": "version=2.4.1-gplasync,framerate=30,maxDeviceMemory=0,async=1,asyncCache=1,vkd3dVersion=2.14.1-0,vkd3dLevel=12_1",
+      "forceFullscreen": "1"
+    }
+  },
+  {
+    "id": "nfs-mw-carbon",
+    "names": ["speed.exe", "nfs.exe", "nfsmw.exe", "nfsc.exe"],
+    "extras": {
+      "screenSize": "1280x720",
+      "box64Preset": "PERFORMANCE",
+      "dxwrapperConfig": "version=1.10.3,framerate=60,maxDeviceMemory=0,async=1,asyncCache=1,vkd3dVersion=2.14.1-0,vkd3dLevel=12_1",
+      "forceFullscreen": "1"
+    }
+  },
+  {
+    "id": "minecraft-launcher",
+    "names": ["minecraftlauncher.exe", "tlauncher.exe"],
+    "extras": {
+      "screenSize": "1280x720",
+      "box64Preset": "COMPATIBILITY",
+      "dxwrapper": "wined3d"
+    }
+  },
+  {
+    "id": "source-games",
+    "names": ["hl2.exe", "csgo.exe", "portal2.exe", "left4dead2.exe"],
+    "extras": {
+      "screenSize": "1280x720",
+      "box64Preset": "PERFORMANCE",
+      "dxwrapperConfig": "version=1.10.3,framerate=60,maxDeviceMemory=0,async=1,asyncCache=1,vkd3dVersion=2.14.1-0,vkd3dLevel=12_1",
+      "forceFullscreen": "1"
+    }
+  },
+  {
+    "id": "installer",
+    "names": ["setup.exe", "install.exe", "installer.exe", "unins000.exe"],
+    "extras": {
+      "screenSize": "1280x720",
+      "box64Preset": "COMPATIBILITY"
+    }
+  }
+]

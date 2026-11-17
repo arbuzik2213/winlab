@@ -215,7 +215,9 @@ public class ContainerManager {
                 if (!file.getName().toLowerCase().endsWith(".desktop")) continue;
 
                 try {
-                    shortcuts.add(new Shortcut(container, file));
+                    Shortcut shortcut = new Shortcut(container, file);
+                    com.winlator.cmod.core.GameProfiles.applyIfNeeded(context, shortcut);
+                    shortcuts.add(shortcut);
                 } catch (Exception ex) {
                     Log.w("ContainerManager",
                             "Skipping malformed shortcut: " + file.getAbsolutePath(), ex);
