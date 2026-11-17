@@ -19,7 +19,46 @@ import java.io.File;
 public abstract class WineThemeManager {
     public enum Theme {LIGHT, DARK}
     public enum BackgroundType {IMAGE, COLOR}
-    public static final String DEFAULT_DESKTOP_THEME = Theme.LIGHT+","+BackgroundType.IMAGE+",#0277bd";
+    public static final String DEFAULT_DESKTOP_THEME = Theme.LIGHT+","+BackgroundType.IMAGE+",#0B1220";
+
+
+    /** Windows 11 light: white title bars, light grey chrome, #0078D4 accent. */
+    private static final String[][] LIGHT_COLORS = {
+        {"ActiveBorder", "243 243 243"}, {"ActiveTitle", "255 255 255"},
+        {"ButtonAlternateFace", "251 251 251"}, {"ButtonDkShadow", "160 160 160"},
+        {"ButtonFace", "243 243 243"}, {"ButtonHilight", "255 255 255"},
+        {"ButtonLight", "250 250 250"}, {"ButtonShadow", "205 205 205"},
+        {"ButtonText", "26 26 26"}, {"GradientActiveTitle", "255 255 255"},
+        {"GradientInactiveTitle", "243 243 243"}, {"GrayText", "150 150 150"},
+        {"Hilight", "0 120 212"}, {"HilightText", "255 255 255"},
+        {"HotTrackingColor", "0 120 212"}, {"InactiveBorder", "243 243 243"},
+        {"InactiveTitle", "243 243 243"}, {"InactiveTitleText", "130 130 130"},
+        {"InfoText", "26 26 26"}, {"InfoWindow", "255 255 255"},
+        {"Menu", "249 249 249"}, {"MenuBar", "249 249 249"},
+        {"MenuHilight", "0 120 212"}, {"MenuText", "26 26 26"},
+        {"Scrollbar", "243 243 243"}, {"TitleText", "26 26 26"},
+        {"Window", "255 255 255"}, {"WindowFrame", "218 218 218"},
+        {"WindowText", "26 26 26"}
+    };
+
+    /** Windows 11 dark. */
+    private static final String[][] DARK_COLORS = {
+        {"ActiveBorder", "43 43 43"}, {"ActiveTitle", "32 32 32"},
+        {"ButtonAlternateFace", "43 43 43"}, {"ButtonDkShadow", "20 20 20"},
+        {"ButtonFace", "43 43 43"}, {"ButtonHilight", "60 60 60"},
+        {"ButtonLight", "55 55 55"}, {"ButtonShadow", "25 25 25"},
+        {"ButtonText", "255 255 255"}, {"GradientActiveTitle", "32 32 32"},
+        {"GradientInactiveTitle", "43 43 43"}, {"GrayText", "140 140 140"},
+        {"Hilight", "0 120 212"}, {"HilightText", "255 255 255"},
+        {"HotTrackingColor", "76 194 255"}, {"InactiveBorder", "43 43 43"},
+        {"InactiveTitle", "43 43 43"}, {"InactiveTitleText", "150 150 150"},
+        {"InfoText", "255 255 255"}, {"InfoWindow", "43 43 43"},
+        {"Menu", "43 43 43"}, {"MenuBar", "32 32 32"},
+        {"MenuHilight", "0 120 212"}, {"MenuText", "255 255 255"},
+        {"Scrollbar", "43 43 43"}, {"TitleText", "255 255 255"},
+        {"Window", "32 32 32"}, {"WindowFrame", "70 70 70"},
+        {"WindowText", "255 255 255"}
+    };
 
     public static class ThemeInfo {
         public final Theme theme;
@@ -53,70 +92,15 @@ public abstract class WineThemeManager {
             }
             else registryEditor.removeValue("Control Panel\\Desktop", "Wallpaper");
 
-            if (themeInfo.theme == Theme.LIGHT) {
-                registryEditor.setStringValue("Control Panel\\Colors", "ActiveBorder", "245 245 245");
-                registryEditor.setStringValue("Control Panel\\Colors", "ActiveTitle", "96 125 139");
-                registryEditor.setStringValue("Control Panel\\Colors", "Background", background);
-                registryEditor.setStringValue("Control Panel\\Colors", "ButtonAlternateFace", "245 245 245");
-                registryEditor.setStringValue("Control Panel\\Colors", "ButtonDkShadow", "158 158 158");
-                registryEditor.setStringValue("Control Panel\\Colors", "ButtonFace", "245 245 245");
-                registryEditor.setStringValue("Control Panel\\Colors", "ButtonHilight", "224 224 224");
-                registryEditor.setStringValue("Control Panel\\Colors", "ButtonLight", "255 255 255");
-                registryEditor.setStringValue("Control Panel\\Colors", "ButtonShadow", "158 158 158");
-                registryEditor.setStringValue("Control Panel\\Colors", "ButtonText", "0 0 0");
-                registryEditor.setStringValue("Control Panel\\Colors", "GradientActiveTitle", "96 125 139");
-                registryEditor.setStringValue("Control Panel\\Colors", "GradientInactiveTitle", "117 117 117");
-                registryEditor.setStringValue("Control Panel\\Colors", "GrayText", "158 158 158");
-                registryEditor.setStringValue("Control Panel\\Colors", "Hilight", "2 136 209");
-                registryEditor.setStringValue("Control Panel\\Colors", "HilightText", "255 255 255");
-                registryEditor.setStringValue("Control Panel\\Colors", "HotTrackingColor", "2 136 209");
-                registryEditor.setStringValue("Control Panel\\Colors", "InactiveBorder", "255 255 255");
-                registryEditor.setStringValue("Control Panel\\Colors", "InactiveTitle", "117 117 117");
-                registryEditor.setStringValue("Control Panel\\Colors", "InactiveTitleText", "200 200 200");
-                registryEditor.setStringValue("Control Panel\\Colors", "InfoText", "0 0 0");
-                registryEditor.setStringValue("Control Panel\\Colors", "InfoWindow", "255 255 255");
-                registryEditor.setStringValue("Control Panel\\Colors", "Menu", "245 245 245");
-                registryEditor.setStringValue("Control Panel\\Colors", "MenuBar", "245 245 245");
-                registryEditor.setStringValue("Control Panel\\Colors", "MenuHilight", "2 136 209");
-                registryEditor.setStringValue("Control Panel\\Colors", "MenuText", "0 0 0");
-                registryEditor.setStringValue("Control Panel\\Colors", "Scrollbar", "245 245 245");
-                registryEditor.setStringValue("Control Panel\\Colors", "TitleText", "255 255 255");
-                registryEditor.setStringValue("Control Panel\\Colors", "Window", "245 245 245");
-                registryEditor.setStringValue("Control Panel\\Colors", "WindowFrame", "158 158 158");
-                registryEditor.setStringValue("Control Panel\\Colors", "WindowText", "0 0 0");
-            }
-            else if (themeInfo.theme == Theme.DARK) {
-                registryEditor.setStringValue("Control Panel\\Colors", "ActiveBorder", "48 48 48");
-                registryEditor.setStringValue("Control Panel\\Colors", "ActiveTitle", "33 33 33");
-                registryEditor.setStringValue("Control Panel\\Colors", "Background", background);
-                registryEditor.setStringValue("Control Panel\\Colors", "ButtonAlternateFace", "33 33 33");
-                registryEditor.setStringValue("Control Panel\\Colors", "ButtonDkShadow", "0 0 0");
-                registryEditor.setStringValue("Control Panel\\Colors", "ButtonFace", "33 33 33");
-                registryEditor.setStringValue("Control Panel\\Colors", "ButtonHilight", "48 48 48");
-                registryEditor.setStringValue("Control Panel\\Colors", "ButtonLight", "48 48 48");
-                registryEditor.setStringValue("Control Panel\\Colors", "ButtonShadow", "0 0 0");
-                registryEditor.setStringValue("Control Panel\\Colors", "ButtonText", "255 255 255");
-                registryEditor.setStringValue("Control Panel\\Colors", "GradientActiveTitle", "33 33 33");
-                registryEditor.setStringValue("Control Panel\\Colors", "GradientInactiveTitle", "33 33 33");
-                registryEditor.setStringValue("Control Panel\\Colors", "GrayText", "117 117 117");
-                registryEditor.setStringValue("Control Panel\\Colors", "Hilight", "2 136 209");
-                registryEditor.setStringValue("Control Panel\\Colors", "HilightText", "255 255 255");
-                registryEditor.setStringValue("Control Panel\\Colors", "HotTrackingColor", "2 136 209");
-                registryEditor.setStringValue("Control Panel\\Colors", "InactiveBorder", "48 48 48");
-                registryEditor.setStringValue("Control Panel\\Colors", "InactiveTitle", "33 33 33");
-                registryEditor.setStringValue("Control Panel\\Colors", "InactiveTitleText", "117 117 117");
-                registryEditor.setStringValue("Control Panel\\Colors", "InfoText", "255 255 255");
-                registryEditor.setStringValue("Control Panel\\Colors", "InfoWindow", "255 255 255");
-                registryEditor.setStringValue("Control Panel\\Colors", "Menu", "33 33 33");
-                registryEditor.setStringValue("Control Panel\\Colors", "MenuBar", "48 48 48");
-                registryEditor.setStringValue("Control Panel\\Colors", "MenuHilight", "2 136 209");
-                registryEditor.setStringValue("Control Panel\\Colors", "MenuText", "255 255 255");
-                registryEditor.setStringValue("Control Panel\\Colors", "Scrollbar", "48 48 48");
-                registryEditor.setStringValue("Control Panel\\Colors", "TitleText", "255 255 255");
-                registryEditor.setStringValue("Control Panel\\Colors", "Window", "48 48 48");
-                registryEditor.setStringValue("Control Panel\\Colors", "WindowFrame", "0 0 0");
-                registryEditor.setStringValue("Control Panel\\Colors", "WindowText", "255 255 255");
-            }
+            // WinArt: flat Windows 10/11 style palette
+            String[][] palette = themeInfo.theme == Theme.LIGHT ? LIGHT_COLORS : DARK_COLORS;
+            for (String[] entry : palette) registryEditor.setStringValue("Control Panel\\Colors", entry[0], entry[1]);
+            registryEditor.setStringValue("Control Panel\\Colors", "Background", background);
+            // crisper text, like a modern Windows desktop
+            registryEditor.setStringValue("Control Panel\\Desktop", "FontSmoothing", "2");
+            registryEditor.setDwordValue("Control Panel\\Desktop", "FontSmoothingType", 2);
+            registryEditor.setDwordValue("Control Panel\\Desktop", "FontSmoothingGamma", 1400);
+            registryEditor.setDwordValue("Control Panel\\Desktop", "FontSmoothingOrientation", 1);
         }
     }
 

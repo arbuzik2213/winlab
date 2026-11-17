@@ -5,16 +5,16 @@
 
     <!-- Light Theme Colors -->
     <color name="window_background_color">#fafafa</color>
-    <color name="colorPrimary">#2F0B81</color>
-    <color name="colorPrimaryDark">#350D66</color>
-    <color name="colorAccent">#0288d1</color>
+    <color name="colorPrimary">#2563EB</color>
+    <color name="colorPrimaryDark">#1D4ED8</color>
+    <color name="colorAccent">#22D3EE</color>
     <color name="black">#000000</color>
 
     <!-- Dark Theme Colors -->
     <color name="window_background_color_dark">#121212</color>
-    <color name="colorPrimaryDarkMode">#390E7A</color>
-    <color name="colorPrimaryDarkModeDark">#43197C</color>
-    <color name="colorAccentDark">#80d8ff</color>
+    <color name="colorPrimaryDarkMode">#3B82F6</color>
+    <color name="colorPrimaryDarkModeDark">#2563EB</color>
+    <color name="colorAccentDark">#67E8F9</color>
     <color name="white">#ffffff</color>
 
     <!-- Additional Colors for Dark Mode -->

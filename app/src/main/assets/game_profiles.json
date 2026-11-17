@@ -1,7 +1,39 @@
 [
   {
+    "id": "dummywar",
+    "names": [
+      "dummywar.exe",
+      "dummywar-mp-setup.exe"
+    ],
+    "extras": {
+      "screenSize": "1280x720",
+      "box64Preset": "PERFORMANCE",
+      "dxwrapper": "dxvk",
+      "dxwrapperConfig": "version=1.10.3,framerate=60,maxDeviceMemory=0,async=1,asyncCache=1,vkd3dVersion=2.14.1-0,vkd3dLevel=12_1",
+      "forceFullscreen": "1",
+      "envVars": "WINEESYNC=1 DXVK_HUD=0 MESA_SHADER_CACHE_DISABLE=false"
+    }
+  },
+  {
+    "id": "unity-generic",
+    "names": [
+      "unityplayer.exe",
+      "unitycrashhandler64.exe"
+    ],
+    "extras": {
+      "screenSize": "1280x720",
+      "box64Preset": "INTERMEDIATE",
+      "dxwrapper": "dxvk",
+      "dxwrapperConfig": "version=1.10.3,framerate=60,maxDeviceMemory=0,async=1,asyncCache=1,vkd3dVersion=2.14.1-0,vkd3dLevel=12_1"
+    }
+  },
+  {
     "id": "gta-sa",
-    "names": ["gta_sa.exe", "gta-sa.exe", "gta_sa_compact.exe"],
+    "names": [
+      "gta_sa.exe",
+      "gta-sa.exe",
+      "gta_sa_compact.exe"
+    ],
     "extras": {
       "screenSize": "1280x720",
       "box64Preset": "PERFORMANCE",
@@ -12,7 +44,10 @@
   },
   {
     "id": "gta-iv",
-    "names": ["gtaiv.exe", "launchgtaiv.exe"],
+    "names": [
+      "gtaiv.exe",
+      "launchgtaiv.exe"
+    ],
     "extras": {
       "screenSize": "1280x720",
       "box64Preset": "PERFORMANCE",
@@ -22,7 +57,10 @@
   },
   {
     "id": "skyrim",
-    "names": ["tesv.exe", "skyrimse.exe"],
+    "names": [
+      "tesv.exe",
+      "skyrimse.exe"
+    ],
     "extras": {
       "screenSize": "1280x720",
       "box64Preset": "PERFORMANCE",
@@ -32,7 +70,11 @@
   },
   {
     "id": "fallout",
-    "names": ["fallout3.exe", "falloutnv.exe", "fallout4.exe"],
+    "names": [
+      "fallout3.exe",
+      "falloutnv.exe",
+      "fallout4.exe"
+    ],
     "extras": {
       "screenSize": "1280x720",
       "box64Preset": "PERFORMANCE",
@@ -42,7 +84,9 @@
   },
   {
     "id": "witcher3",
-    "names": ["witcher3.exe"],
+    "names": [
+      "witcher3.exe"
+    ],
     "extras": {
       "screenSize": "960x540",
       "box64Preset": "PERFORMANCE",
@@ -52,7 +96,12 @@
   },
   {
     "id": "nfs-mw-carbon",
-    "names": ["speed.exe", "nfs.exe", "nfsmw.exe", "nfsc.exe"],
+    "names": [
+      "speed.exe",
+      "nfs.exe",
+      "nfsmw.exe",
+      "nfsc.exe"
+    ],
     "extras": {
       "screenSize": "1280x720",
       "box64Preset": "PERFORMANCE",
@@ -62,7 +111,10 @@
   },
   {
     "id": "minecraft-launcher",
-    "names": ["minecraftlauncher.exe", "tlauncher.exe"],
+    "names": [
+      "minecraftlauncher.exe",
+      "tlauncher.exe"
+    ],
     "extras": {
       "screenSize": "1280x720",
       "box64Preset": "COMPATIBILITY",
@@ -71,7 +123,12 @@
   },
   {
     "id": "source-games",
-    "names": ["hl2.exe", "csgo.exe", "portal2.exe", "left4dead2.exe"],
+    "names": [
+      "hl2.exe",
+      "csgo.exe",
+      "portal2.exe",
+      "left4dead2.exe"
+    ],
     "extras": {
       "screenSize": "1280x720",
       "box64Preset": "PERFORMANCE",
@@ -81,7 +138,12 @@
   },
   {
     "id": "installer",
-    "names": ["setup.exe", "install.exe", "installer.exe", "unins000.exe"],
+    "names": [
+      "setup.exe",
+      "install.exe",
+      "installer.exe",
+      "unins000.exe"
+    ],
     "extras": {
       "screenSize": "1280x720",
       "box64Preset": "COMPATIBILITY"
