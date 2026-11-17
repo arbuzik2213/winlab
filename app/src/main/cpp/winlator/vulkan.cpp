@@ -63,7 +63,7 @@ std::vector<VkPhysicalDevice> get_physical_devices(VkInstance instance) {
 extern "C" JNIEXPORT jstring JNICALL
 Java_com_winlator_cmod_core_GPUInformation_getVersion(JNIEnv *env, jclass obj) {
     VkPhysicalDeviceProperties props = {};
-    char *driverVersion;
+    char *driverVersion = NULL;
     VkInstance instance;
 
     instance = create_instance();
@@ -81,13 +81,15 @@ Java_com_winlator_cmod_core_GPUInformation_getVersion(JNIEnv *env, jclass obj) {
 
     destroyInstance(instance, NULL);
 
-    return (env->NewStringUTF(driverVersion));
+    jstring result_str = env->NewStringUTF(driverVersion != NULL ? driverVersion : "0.0.0");
+    free(driverVersion);
+    return result_str;
 }
 
 extern "C" JNIEXPORT jstring JNICALL
 Java_com_winlator_cmod_core_GPUInformation_getRenderer(JNIEnv *env, jclass obj) {
     VkPhysicalDeviceProperties props = {};
-    char *renderer;
+    char *renderer = NULL;
     VkInstance instance;
 
     instance = create_instance();
@@ -101,13 +103,15 @@ Java_com_winlator_cmod_core_GPUInformation_getRenderer(JNIEnv *env, jclass obj) 
 
     destroyInstance(instance, NULL);
 
-    return (env->NewStringUTF(renderer));
+    jstring result_str = env->NewStringUTF(renderer != NULL ? renderer : "unknown");
+    free(renderer);
+    return result_str;
 }
 
 extern "C" JNIEXPORT jlong JNICALL
 Java_com_winlator_cmod_core_GPUInformation_getMemorySize(JNIEnv *env, jclass obj) {
     VkPhysicalDeviceMemoryProperties props = {};
-    long memorySize;
+    long memorySize = 0;
     VkInstance instance;
 
     instance = create_instance();

@@ -7,3 +7,9 @@
 /captures
 .externalNativeBuild
 .cxx
+
+# Large binary assets pulled from the official Cmod APK (not in git)
+app/src/main/assets/*.txz
+app/src/main/assets/contents/*.wcp
+app/src/main/assets/graphics_driver/adrenotools-turnip25.3.0_*.tzst
+app/src/main/assets/graphics_driver/libvulkan_wrapper.tar.xz

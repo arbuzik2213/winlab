@@ -31,6 +31,7 @@
     <string name="updating_system_files">Updating System Files…</string>
     <string name="starting_up">Starting up…</string>
     <string name="unable_to_install_system_files">Unable to install system files</string>
+    <string name="system_files_not_installed">System files are not installed yet. Restart the app and wait for the installation to finish.</string>
     <string name="keyboard">Keyboard</string>
     <string name="toggle_fullscreen">Toggle Fullscreen</string>
     <string name="exit">Exit</string>

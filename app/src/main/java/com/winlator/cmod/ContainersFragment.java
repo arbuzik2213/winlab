@@ -178,7 +178,11 @@ public class ContainersFragment extends Fragment {
     public boolean onOptionsItemSelected(MenuItem menuItem) {
         switch (menuItem.getItemId()) {
             case R.id.containers_menu_add:
-                if (!ImageFs.find(getContext()).isValid()) return false;
+                if (!ImageFs.find(getContext()).isValid()) {
+                    // WinLab: tell the user instead of silently ignoring the tap
+                    AppUtils.showToast(getContext(), R.string.system_files_not_installed);
+                    return false;
+                }
                 FragmentManager fragmentManager = getParentFragmentManager();
                 fragmentManager.beginTransaction()
                         .setCustomAnimations(R.anim.slide_in_up, R.anim.slide_out_down, R.anim.slide_in_down, R.anim.slide_out_up)
