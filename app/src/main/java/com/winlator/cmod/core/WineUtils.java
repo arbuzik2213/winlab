@@ -64,6 +64,18 @@ public abstract class WineUtils {
             registryEditor.setStringValue("Software\\Classes\\dllfile\\DefaultIcon", null, "shell32.dll,-154");
             registryEditor.setStringValue("Software\\Classes\\lnkfile\\DefaultIcon", null, "shell32.dll,-30");
             registryEditor.setStringValue("Software\\Classes\\inifile\\DefaultIcon", null, "shell32.dll,-151");
+            // WinLab: report Windows 10 instead of Windows 7
+            final String winNT = "Software\\Microsoft\\Windows NT\\CurrentVersion";
+            registryEditor.setStringValue(winNT, "CurrentVersion", "10.0");
+            registryEditor.setStringValue(winNT, "CurrentBuild", "19045");
+            registryEditor.setStringValue(winNT, "CurrentBuildNumber", "19045");
+            registryEditor.setStringValue(winNT, "ProductName", "Windows 10 Pro");
+            registryEditor.setStringValue(winNT, "CSDVersion", "");
+            registryEditor.setDwordValue(winNT, "CurrentMajorVersionNumber", 10);
+            registryEditor.setDwordValue(winNT, "CurrentMinorVersionNumber", 0);
+            registryEditor.setStringValue("Software\\Microsoft\\Windows\\CurrentVersion", "CurrentVersion", "10.0");
+            registryEditor.setStringValue("System\\CurrentControlSet\\Control\\ProductOptions", "ProductType", "WinNT");
+            registryEditor.setDwordValue("System\\CurrentControlSet\\Control\\Windows", "CSDVersion", 0);
         }
 
         final String[] direct3dLibs = {"d3d8", "d3d9", "d3d10", "d3d10_1", "d3d10core", "d3d11", "d3d12", "d3d12core", "ddraw", "dxgi", "wined3d"};
@@ -73,6 +85,7 @@ public abstract class WineUtils {
         try (WineRegistryEditor registryEditor = new WineRegistryEditor(userRegFile)) {
             for (String name : direct3dLibs) registryEditor.setStringValue(dllOverridesKey, name, "native,builtin");
             for (String name : xinputLibs) registryEditor.setStringValue(dllOverridesKey, name, "builtin,native");
+            registryEditor.setStringValue("Software\\Wine", "Version", "win10");
             setWindowMetrics(registryEditor);
         }
     }
